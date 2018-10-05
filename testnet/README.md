@@ -15,7 +15,7 @@ $ docker build -t whisper_testnet .
 Type:
 
 ```shell
-docker run -it whisper
+docker run -it whisper_testnet
 ```
 
 ## Private network
