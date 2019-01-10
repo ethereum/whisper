@@ -20,6 +20,17 @@ This repository gathers various whisper-related tools
 
 * [Introducing Bloom Payment Channels Enabled By Ethereum Whisper][f3]
 
+## Compatibility
+
+| Client       | Version | Whisper Version |
+|--------------|---------|-----------------|
+| Geth         |         |                 |
+| Parity       |         |                 |
+| EthereumJ    |         |                 |
+| Cpp-Ethereum |         |                 |
+| PyEthereum   |         |                 |
+
+
 
 [logo]:https://github.com/ethereum/whisper/lib/logo.jpg
 
