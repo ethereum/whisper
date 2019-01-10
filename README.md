@@ -23,7 +23,7 @@ This repository gathers various whisper-related tools
 ## Compatibility
 
 | Client       | Version | Whisper Version |
-|--------------|---------|-----------------|
+|:------------:|---------|-----------------|
 | Geth         |         |                 |
 | Parity       |         |                 |
 | EthereumJ    |         |                 |
