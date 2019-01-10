@@ -5,19 +5,20 @@ This repository gathers various whisper-related tools
 
 ## Documentation:
 
-[EIP-627: Whisper Specification][d1]
+* [EIP-627: Whisper Specification][d1]
 
-[Whisper wiki][d2]
+* [Whisper wiki][d2]
 
-[Formal spec][d3]
+* [Formal spec][d3]
+
 
 ## Further reading
 
-[Whisper - PSS comparison][f1]
+* [Whisper - PSS comparison][f1]
 
-[Decentralized Application Messaging with Whisper][f2]
+* [Decentralized Application Messaging with Whisper][f2]
 
-[Introducing Bloom Payment Channels Enabled By Ethereum Whisper][f3]
+* [Introducing Bloom Payment Channels Enabled By Ethereum Whisper][f3]
 
 
 [logo]:https://github.com/ethereum/whisper/lib/logo.jpg
