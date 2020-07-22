@@ -16,7 +16,7 @@
 
 // Contains the Whisper protocol Topic element.
 
-package whisperv6
+package whisper
 
 import (
 	"github.com/ethereum/go-ethereum/common/hexutil"

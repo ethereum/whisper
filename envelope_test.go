@@ -16,7 +16,7 @@
 
 // Contains the tests associated with the Whisper protocol Envelope object.
 
-package whisperv6
+package whisper
 
 import (
 	mrand "math/rand"

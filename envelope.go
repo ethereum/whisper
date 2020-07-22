@@ -16,7 +16,7 @@
 
 // Contains the Whisper protocol Envelope element.
 
-package whisperv6
+package whisper
 
 import (
 	"crypto/ecdsa"

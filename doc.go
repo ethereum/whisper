@@ -30,7 +30,7 @@ particularly the notion of singular endpoints.
 
 // Contains the Whisper protocol constant definitions
 
-package whisperv6
+package whisper
 
 import (
 	"time"
