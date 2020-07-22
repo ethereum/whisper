@@ -44,8 +44,8 @@ import (
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/ethereum/go-ethereum/p2p/nat"
-	"github.com/ethereum/go-ethereum/whisper/mailserver"
 	"github.com/ethereum/whisper"
+	"github.com/ethereum/whisper/mailserver"
 	"golang.org/x/crypto/pbkdf2"
 )
 
