@@ -20,17 +20,19 @@ import (
 	"bytes"
 	"crypto/ecdsa"
 	"fmt"
+	"io/ioutil"
 	mrand "math/rand"
+	"net"
+	"os"
 	"sync"
 	"sync/atomic"
 	"testing"
 	"time"
 
-	"net"
-
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
+	pkgNode "github.com/ethereum/go-ethereum/node"
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/ethereum/go-ethereum/p2p/nat"
@@ -178,15 +180,28 @@ func initialize(t *testing.T) {
 
 	for i := 0; i < NumNodes; i++ {
 		var node TestNode
+		var stack *pkgNode.Node
 		b := make([]byte, BloomFilterSize)
 		copy(b, masterBloomFilter)
-		node.shh = New(&DefaultConfig)
+		cfg := pkgNode.DefaultConfig
+		cfg.DataDir, err = ioutil.TempDir("", "*-node")
+		if err != nil {
+			t.Fatalf("Error creating datadir: %v", err)
+		}
+		defer os.RemoveAll(cfg.DataDir)
+		fmt.Println("data dir", cfg.DataDir)
+		stack, err = pkgNode.New(&cfg)
+		if err != nil {
+			t.Fatalf("error starting the node: %v", err)
+		}
+		defer stack.Close()
+		node.shh, err = New(stack, &DefaultConfig)
 		node.shh.SetMinimumPoW(masterPow)
 		node.shh.SetBloomFilter(b)
 		if !bytes.Equal(node.shh.BloomFilter(), masterBloomFilter) {
 			t.Fatalf("bloom mismatch on init.")
 		}
-		node.shh.Start(nil)
+		node.shh.Start()
 		topics := make([]TopicType, 0)
 		topics = append(topics, sharedTopic)
 		f := Filter{KeySym: sharedKey}
