@@ -14,18 +14,18 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with the go-ethereum library. If not, see <http://www.gnu.org/licenses/>.
 
-package whisperv6
+package whisperfuzz
 
 import (
 	"bytes"
 
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/whisper/whisperv6"
+	"github.com/ethereum/whisper"
 )
 
 type MessageParams struct {
-	Topic    whisperv6.TopicType
+	Topic    whisper.TopicType
 	WorkTime uint32
 	TTL      uint32
 	KeySym   []byte
@@ -40,7 +40,7 @@ func Fuzz(input []byte) int {
 	if err != nil {
 		return 0
 	}
-	var params whisperv6.MessageParams
+	var params whisper.MessageParams
 	params.KeySym = make([]byte, 32)
 	if len(paramsDecoded.KeySym) <= 32 {
 		copy(params.KeySym, paramsDecoded.KeySym)
@@ -61,7 +61,7 @@ func Fuzz(input []byte) int {
 	if err != nil {
 		return 0
 	}
-	msg, err := whisperv6.NewSentMessage(&params)
+	msg, err := whisper.NewSentMessage(&params)
 	if err != nil {
 		panic(err)
 		//return
@@ -83,7 +83,7 @@ func Fuzz(input []byte) int {
 	if len(decrypted.Signature) != 65 {
 		panic("Unexpected signature length")
 	}
-	if !whisperv6.IsPubKeyEqual(decrypted.Src, &params.Src.PublicKey) {
+	if !whisper.IsPubKeyEqual(decrypted.Src, &params.Src.PublicKey) {
 		panic("Unexpected public key")
 	}
 	return 0
