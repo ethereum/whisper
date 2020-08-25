@@ -1,0 +1,4 @@
+panic: invalid key provided for symmetric encryption, size: 32
+github.com/ethereum/whisper/tests/fuzzers/whisperv6.Fuzz
+go-fuzz-dep.Main
+main.main
