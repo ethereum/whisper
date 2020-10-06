@@ -17,7 +17,7 @@ require (
 	github.com/gorilla/websocket v1.4.1 // indirect
 	github.com/howeyc/fsnotify v0.9.0 // indirect
 	github.com/huin/goupnp v1.0.0 // indirect
-	github.com/influxdata/influxdb v1.7.9 // indirect
+	github.com/influxdata/influxdb v1.8.3 // indirect
 	github.com/karalabe/usb v0.0.0-20191104083709-911d15fe12a9 // indirect
 	github.com/mattn/go-colorable v0.1.4 // indirect
 	github.com/mattn/go-isatty v0.0.10 // indirect
