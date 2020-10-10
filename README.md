@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/ethereum/whisper.svg?style=svg)](https://circleci.com/gh/ethereum/whisper)
+
 # whisper
 
 This repository is extracted from [the go-ethereum whisper implementation](https://github.com/ethereum/go-ethereum) and is used as an archive.
